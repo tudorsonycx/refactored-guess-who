@@ -2,7 +2,7 @@ package Char
 
 import scala.util.Random
 
-object CharacterLogic {
+class CharacterLogic {
   val al = new Male("Al", Char.Character.Pink, Char.Character.Blue)
   val april: Female = new Female("April", Char.Character.Black, Char.Character.Brown)
   val lan = new Female("Lan", Char.Character.Pink, Char.Character.Green)
@@ -17,9 +17,10 @@ object CharacterLogic {
   val andy = new Male("Andy", Char.Character.Black, Char.Character.Green)
   val characterList: List[Char.Character] = List(al, april, lan, farnoosh, eloise, nimo, dorothea, sandra, ash, tudor, waris, andy)
 
-  val randomnum: Int = Random.between(0, characterList.length - 1)
+  def getRandomNum: Int = Random.between(0, characterList.length - 1)
+
   //println(randomnum)
-  val chosenChar: Char.Character = characterList(randomnum)
+  val chosenChar: Char.Character = characterList(getRandomNum)
   //println(chosenChar.name)
 
   val boardX: Int = 4
